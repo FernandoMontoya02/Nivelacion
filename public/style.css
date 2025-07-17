@@ -65,7 +65,48 @@ input[type="text"] {
   margin-bottom: 16px;
   font-size: 1rem;
 }
+  #start-section {
+    background-color: #dcdce6; /* azul claro */
+    border: 2px solid #0077b6;
+    border-radius: 12px;
+    padding: 20px 30px;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    text-align: center; /* Centra el contenido */
+  }
 
+  #instructions {
+    margin-bottom: 20px;
+    text-align: left; /* Mantén las instrucciones alineadas a la izquierda */
+  }
+
+  #studentName {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  #start-button {
+    margin-top: 20px;
+  }
+
+  #start-button button {
+    background-color: #0077b6;
+    color: rgb(161, 158, 158);
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #start-button button:hover {
+    background-color: #005f8a;
+  }
 button {
   display: inline-block;
   background-color: #3498db;
