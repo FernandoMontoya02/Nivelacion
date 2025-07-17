@@ -8,13 +8,25 @@
 </head>
 <body>
 
-  <h1>Test Vocacional - Senescyt</h1>
-  <div id="start">
-    <label for="studentName">Ingresa tu nombre completo:</label><br>
-    <input type="text" id="studentName" required />
-    <br><br>
+  <h1>Test Vocacional - Senescyt para la identificación de intereses vocacionales y profesionales</h1>
+<div id="start-section">
+  <div id="instructions">
+    <p>
+      <strong>Instrucciones:</strong><br>
+      1. Lee atentamente cada una de las actividades.<br>
+      2. Marca con una “X” en las columnas “Me Interesa” o “No me interesa” según tu propia decisión.<br>
+      Recuerda: debes marcar la “X” en una sola de las columnas.<br>
+      3. No hay respuestas correctas o incorrectas; lo importante es que contestes con sinceridad y confianza para que puedas conocer mejor tus intereses vocacionales.
+    </p>
+  </div>
+
+  <label for="studentName">Ingresa tu nombre completo:</label><br>
+  <input type="text" id="studentName" required />
+
+  <div id="start-button">
     <button onclick="startTest()">Comenzar</button>
   </div>
+</div>
 
   <form id="testForm" class="hidden">
     <div id="questionsContainer"></div>
@@ -219,7 +231,17 @@ document.getElementById("testForm").addEventListener("submit", function(e) {
   const topArea = sorted[0][0]; // área con más puntos
 
   // Construir el HTML de resultados mostrando todas las áreas
-  let resultsHTML = `<h2>¡Gracias, ${studentName}!</h2><h3>Resultados por área:</h3><ul>`;
+  let resultsHTML = `
+  <h2>¡Gracias, ${studentName}!</h2>
+  <p>
+    <strong>Ahora que tienes estos resultados, te invitamos a reflexionar sobre los mismos:</strong><br>
+    Quizá estos no coincidan con lo que tú habías pensado inicialmente estudiar; o con lo que tus padres esperaban que estudies.<br>
+    Posiblemente los resultados del test apuntan a una carrera con escasos cupos o que no exista en la ciudad o país.<br>
+    Investiga sobre la oferta de estudios locales afines al área u otras alternativas vigentes que pudieran responder a tus intereses.
+  </p>
+  <h3>Resultados por área:</h3>
+  <ul>`;
+
   for (const [area, puntos] of sorted) {
     resultsHTML += `<li><strong>${areaInfo[area].nombre}:</strong> ${puntos} puntos</li>`;
   }
@@ -238,6 +260,7 @@ document.getElementById("testForm").addEventListener("submit", function(e) {
   document.getElementById("testForm").classList.add("hidden");
   const resultDiv = document.getElementById("result");
   resultDiv.classList.remove("hidden");
+
   resultDiv.innerHTML = resultsHTML;
 
   // Evento para mostrar tabla completa
