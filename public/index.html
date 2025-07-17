@@ -23,10 +23,9 @@
   <label for="studentName">Ingresa tu nombre completo:</label><br>
   <input type="text" id="studentName" required />
 
-  <form id="testForm" class="hidden">
-    <div id="questionsContainer"></div>
-    <button type="submit">Ver resultados</button>
-  </form>
+  <div id="start-button">
+    <button onclick="startTest()">Comenzar</button>
+  </div>
 </div>
 
   <form id="testForm" class="hidden">
@@ -196,7 +195,7 @@ const areas = {
         return;
       }
       studentName = nameInput.value;
-      document.getElementById("start").classList.add("hidden");
+      document.getElementById("start-section").classList.add("hidden");
       document.getElementById("testForm").classList.remove("hidden");
       loadQuestions();
     }
