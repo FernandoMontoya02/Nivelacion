@@ -258,7 +258,7 @@ document.getElementById("testForm").addEventListener("submit", function(e) {
     payload[area] = puntos;
   }
 
-fetch('https://script.google.com/macros/s/AKfycbyBO10fsfjMXJP73OhFmfINQ2BUY_iSpZbviaUxXHgzvEsmfcNPeX6j4zJL6_g3tt-yfg/exec', {
+fetch('/api/guardar', {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(payload),
