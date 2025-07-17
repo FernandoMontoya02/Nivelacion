@@ -23,9 +23,10 @@
   <label for="studentName">Ingresa tu nombre completo:</label><br>
   <input type="text" id="studentName" required />
 
-  <div id="start-button">
-    <button onclick="startTest()">Comenzar</button>
-  </div>
+  <form id="testForm" class="hidden">
+    <div id="questionsContainer"></div>
+    <button type="submit">Ver resultados</button>
+  </form>
 </div>
 
   <form id="testForm" class="hidden">
